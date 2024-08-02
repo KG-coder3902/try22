@@ -1,0 +1,41 @@
+<?php
+include('connection.php');
+$query = "SELECT * FROM registration";
+$result = mysqli_query($conn, $query);
+?>
+<table border ="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <th>Full Name</th>
+    <th>Roll Number</th>
+    <th>Email</th>
+    <th>Date</th>
+    <th>Bonus</th>
+    <th>Is Eligible</th>
+    <th>Gender</th>
+    <th>Description</th>
+    <th>Skill</th>
+    <th>Car</th>
+  </tr>
+<?php
+if (mysqli_num_rows($result) > 0) {
+  $sn=1;
+  while($data = mysqli_fetch_assoc($result)) {
+ ?>
+ <tr>
+   <td><?php echo $sn; ?> </td>
+   <td><?php echo $data['fullName']; ?> </td>
+   <td><?php echo $data['gender']; ?> </td>
+   <td><?php echo $data['email']; ?> </td>
+   <td><?php echo $data['mobile']; ?> </td>
+   <td><?php echo $data['address']; ?> </td>
+   <td><?php echo $data['city']; ?> </td>
+   <td><?php echo $data['state']; ?> </td>
+ <tr>
+ <?php
+  $sn++;}} else { ?>
+    <tr>
+     <td colspan="8">No data found</td>
+    </tr>
+
+ <?php } ?>
+  </table>

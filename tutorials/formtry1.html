@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h2>This is HTML forms tutorial</h2>
+    <form action=".\phpForFormtry1.php" method="post">
+        <label for="name"> Name</label>
+        <div>
+            <input type="text" name="myName" id="name">
+        </div>
+        <br>
+        <div>
+            Role: <input type="text" name="myRole">
+        </div>
+        <br>
+        <div>
+            Email: <input type="email" name="myEmail">
+        </div>
+
+        <br>
+        <div>
+            Date: <input type="date" name="myDate">
+        </div>
+        <br>
+        <div>
+            Bonus: <input type="number" name="myBonus">
+        </div>
+        <br>
+        <div>
+            Are you eligible?: <input type="checkbox" name="myEligibility" checked>
+        </div>
+        <br>
+        <div>
+            Gender: Male <input type="radio" name="myGender" value="male">
+            Female <input type="radio" name="myGender" value="female">
+            Other <input type="radio" name="myGender" value="other">
+        </div>
+
+        <br>
+        <div>
+            Write about yourself: <br><textarea name="mydesciption" cols="90" rows="10"></textarea>
+        </div>
+        <br>
+
+        <label for="skills">Skills</label>
+        <div>
+            <input type="checkbox" name="myskills[]" value="java"><samp>Java</samp>
+            <input type="checkbox" name="myskills[]" value="javascript"><samp>Javascript</samp>
+            <input type="checkbox" name="myskills[]" value="php"><samp>PHP</samp>
+            <input type="checkbox" name="myskills[]" value="c"><samp>C</samp>
+            <input type="checkbox" name="myskills[]" value="cpp"><samp>CPP</samp>
+        </div>
+        <br>
+
+        <div>
+            <label for="car">Car</label>
+            <select name="myCar" id="car">
+                <option value="indica">Indica</option>
+                <option value="swift" selected>Swift</option>
+                <option value="nexon">Nexon</option>
+                <option value="tiago">Tiago</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <input type="submit" value="Submit Now">
+            <input type="reset" value="Reset Now">
+        </div>
+    </form>
+</body>
+
+</html>

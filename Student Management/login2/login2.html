@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="captcha.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="captcha.js"></script>
+    <script> let count = 0;
+        function finalcheck() {
+            if (validateForm() && checkccaptcha()) { return true; } else {
+                if (count > 1) {
+                    window.location.reload();
+                    alert('please enter data correctly.');
+                }
+                count++;
+                return false;
+            }
+        }</script>
+</head>
+
+<body onload="generate()">
+    <h1>LOGIN PAGE</h1>
+    <div class="container">
+        <form name="RegForm" action=".\login.php" method="post" onsubmit="return finalcheck()">
+            <div class="row">
+                <div class="col">
+                    <label for="email">E-mail Address:</label>
+                    <input type="text" id="email" name="EMail" placeholder="Enter your email" />
+                    <span id="email-error" class="error-message"></span>
+                </div>
+                <div class="col">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="Password" placeholder="Enter your password" />
+                    Show
+                    <input type="checkbox" onclick="myFunction()">
+                    <span id="password-error" class="error-message"></span>
+                </div>
+                <div class="col" id="somid">
+                    <br /><label>Captcha:</label><br />
+                    <div id="user-input" class="inline">
+                        <input type="text" id="captchasubmit" placeholder="Captcha code" />
+                    </div>
+
+                    <div class="inline" onclick="generate()" id="somid">
+                        <i class="fas fa-sync"></i>
+                    </div>
+
+                    <div id="image" class="inline" selectable="False">
+                    </div>
+
+                    <!--button id="btn" onclick="printmsg()">Submit Captcha</button-->
+
+                    <p id="key"></p>
+                    <span id="captcha-error" class="error-message"></span>
+                    <script>
+
+                    </script>
+                </div>
+                <div class="col">
+                    <div>
+                        <input type="submit" value="Login" name="Submit" id="btn" onclick="printmsg()" />
+                        <input type="reset" value="Reset" name="Reset" />
+                        <br />
+                        <br />
+                        <a href="..\student-reg.html"><label>new Login? Register</label></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="captcha.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        oQuickReply.swap('somid');
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>
