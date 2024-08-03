@@ -449,7 +449,7 @@ $ID = $id;
          <span onclick="let a=this.parentElement.children[0];(a.type==='password')?a.setAttribute('type','text'):a.setAttribute('type','password')" style=cursor:help>👁 View</span> -->
 
                         <!-- <input id="pass_log_id" type="password" name="pass" value="MySecretPass"> -->
-                        <input type="password" id="password1" name="password1"> Show
+                        <input type="password" class="input-lg form-control" id="password1" name="password1" placeholder="New Password" autocomplete="off"> Show
                         <input type="checkbox" onclick="myFunction()">
 
 
@@ -465,7 +465,7 @@ $ID = $id;
                         </div>
                     </div>
                     <!-- <input type="password" class="input-lg form-control" name="password2" id="password2" placeholder="Repeat Password" autocomplete="off"> -->
-                    <input type="password" id="password2" name="password2">Show
+                    <input type="password" class="input-lg form-control" id="password2" name="password2" placeholder="Repeat Password" autocomplete="off">Show
                     <input type="checkbox" onclick="myFunction2()">
                     <div class="row">
                         <div class="col-sm-12">
