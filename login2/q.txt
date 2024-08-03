@@ -1,0 +1,2 @@
+create admin dashboard
+create functionality to view all students
